@@ -1,0 +1,333 @@
+:root {
+    --orangeColor: #f90;
+    --redColor: #ff1200;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav {
+    display: flex;
+    top: 0;
+    height: 60px;
+    align-items: center;
+    position: sticky;
+    font-size: 1.15em;
+    background-color: var(--orangeColor);
+}
+
+.nav__ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav__ul--li {
+    height: 60px;
+    width: 90px;
+    display: flex;
+    text-align: center;
+}
+
+.nav__ul--li:nth-child(2):hover {
+    user-select: none;
+    cursor: pointer;
+    background-color: #f80;
+}
+
+.nav__ul--link {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-size: .95em;
+    margin: 0 10px;
+    color: #fff;
+    place-content: center;
+    height: 60px;
+    width: 90px;
+}
+
+.nav__ul--li:nth-child(3) {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 0;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: 
+    "options products products";
+}
+
+.options-selector {
+    border-right: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 250px;
+    grid-area: "options";
+    background-color: #fff;
+}
+
+.option {
+    position: sticky;
+    padding: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.option:first-child {
+    top: 60px;
+}
+
+.option:nth-child(2) {
+    top: 120.6px;
+}
+
+.option:nth-child(3) {
+    top: 182.2px;
+}
+
+.option:nth-child(4) {
+    top: 242.8px;
+}
+
+.option:nth-child(5) {
+    top: 304.4px;
+}
+
+.option:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #eee;
+}
+
+.products {
+    padding: 0;
+    margin: 0;
+    grid-area: "products";
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product {
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.product:first-child {
+    border-top: none;
+}
+
+.product-info {
+    width: 100%;
+    height: 100%;
+}
+
+.product-image {
+    min-width: 250px;
+    max-width: 250px;
+    height: 300px;
+}
+
+.product-title {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 1.4em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.product-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05em;
+    padding: 0 20px;
+    min-height: 100px;
+    max-height: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.product-price {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.05em;
+    color: #333;
+}
+
+.product-btn, .product-btn-delete, .btn-delete {
+    height: 30px;
+    border-radius: 25px;
+    width: 200px;
+    border: none;
+    font-size: 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff; 
+    transition: all .7s; 
+}
+
+.product-btn {
+    background-color: var(--orangeColor);
+}
+
+.product-btn-delete, .btn-delete {
+    background-color: var(--redColor);
+}
+
+.product-btn:hover, .product-btn-delete:hover, .btn-delete:hover {
+    cursor: pointer;
+}
+
+.product-btn:hover {
+    box-shadow: 
+    0 0 15px rgba(255, 144, 0, .8),    
+    0 0 25px rgba(255, 144, 0, .6),  
+    0 0 35px rgba(255, 144, 0, .4);
+}
+
+.product-btn-delete:hover, .btn-delete:hover {
+    box-shadow: 
+    0 0 15px rgba(255, 22, 0, .8),    
+    0 0 25px rgba(255, 22, 0, .6),  
+    0 0 35px rgba(255, 22, 0, .4);
+}
+
+.msg-non-items {
+    background: #fff;
+    font-size: 1.4em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 60px);
+    place-content: center;
+    text-align: center;
+}
+
+.carrito-ul {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+}
+
+.carrito-li {
+    padding: 10px;
+    margin: 10px 0;
+    min-height: 40px;
+    display: flex;
+    place-items: center;
+}
+
+.item-name {
+    font-size: 1.05em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-grow: 3;
+}
+
+.item-price {
+    font-size: 1.02em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.modificar-cant {
+    display: flex;
+    align-items: center;
+}
+
+.btn-cant {
+    border: none;
+    background-color: var(--orangeColor);
+    color: #fff;
+    font-size: 1em;
+    margin: 0 10px;
+    text-align: center;
+    height: 20px;
+    width: 25px;
+}
+
+.cant {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.btn-cant:hover {
+    cursor: pointer;
+}
+
+.btn-cant:active {
+    opacity: .8;
+}
+
+.btn-delete {
+    background: var(--redColor);
+    border: none;
+}
+
+.comprar-zone {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.total-compra {
+    flex-grow: 1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    place-content: center;
+    background-color: #ddd;
+    margin: 0;
+}
+
+.comprar-btn {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-grow: 3;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: var(--orangeColor);
+    border: none;
+    color: #fff;
+    transition: .7s;
+}
+
+.comprar-btn:hover {
+    cursor: pointer;
+    box-shadow: 
+    0 0 15px rgba(255, 144, 0, .8),    
+    0 0 25px rgba(255, 144, 0, .6),  
+    0 0 35px rgba(255, 144, 0, .4);
+}
+
+
+@media screen and (max-width: 900px) {
+    .product-image {
+        min-width: 300px;
+        max-width: 300px;
+        height: 350px;
+    }
+
+    .product-desc {
+        min-height: 200px;
+        max-height: 500px;
+    }
+
+    .item-name {
+        text-align: center;
+    }
+
+    .carrito-li {
+        flex-direction: column;
+    }
+}
