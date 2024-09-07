@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { ProductosContext } from "../routes/ProductosContext"
 import { CarritoContext } from "../routes/CarritoContext"
 import { Card } from "../components/Card"

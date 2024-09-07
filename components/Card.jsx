@@ -1,9 +1,6 @@
-import { useContext, useState } from "react"
-import { ProductosContext } from "../routes/ProductosContext"
+import { useState } from "react"
 
 export const Card = ({ enCarrito, image, title, description, price, handleAgregar, handleQuitar }) => {
-
-    const {listaCompras} = useContext(ProductosContext)
 
     const [added, setAdded] = useState(false)
 
