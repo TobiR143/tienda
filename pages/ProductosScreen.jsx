@@ -3,11 +3,14 @@ import { ProductosContext } from "../routes/ProductosContext"
 import { CarritoContext } from "../routes/CarritoContext"
 import { Card } from "../components/Card"
 import { OptionSelector } from "../components/OptionSelector"
+import { useWindowWidth } from "../hooks/useWindowWidth"
 
 export const ProductosScreen = () => {
 
     const { error, products, selectedCategory } = useContext(ProductosContext)
     const { listaCompras, agregarCompra, eliminarCompra} = useContext(CarritoContext)
+    const windowWidth = useWindowWidth() 
+
 
     const handleAgregar = (producto) => {
         agregarCompra(producto)
@@ -30,7 +33,7 @@ export const ProductosScreen = () => {
         <>
         <main className="main">
             {error && <p className = 'error' style = {{color: 'red'}}>{error}</p>} 
-            <OptionSelector />
+            {windowWidth >= 600 && <OptionSelector />}
             <div className="products">
             {
                 filteredProducts.map(producto => {

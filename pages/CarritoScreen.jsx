@@ -24,6 +24,7 @@ export const CarritoScreen = () => {
                                     <p className='cant'>{compra.cantidad}</p>
                                     <button className='btn-cant disminuir' onClick={() => disminuirCantidad(compra.id)}>-</button>
                                 </div>
+                                <img className='item-img' alt={compra.title} src={compra.image} />
                                 <button className='btn-delete' onClick={() => eliminarCompra(compra.id)}>Eliminar</button>
                             </li>
                         )

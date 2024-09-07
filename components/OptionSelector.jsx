@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ProductosContext } from "../routes/ProductosContext"
 
 export const OptionSelector = () => {
@@ -16,7 +16,7 @@ export const OptionSelector = () => {
             {
                 categories.map((category) => {
                     return (
-                        <li className={`option ${selectedCategory === category ? 'selected': ''}`} key={category} value={category} onClick={handleClick}>{category}</li>
+                        <li className={`option ${selectedCategory === category ? 'selected': ''}`} key={category} value={category} onClick={handleClick}>{category.charAt(0).toUpperCase() + category.slice(1)}</li>
                     )
                 })
             }
