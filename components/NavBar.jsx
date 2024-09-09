@@ -10,6 +10,7 @@ export const NavBar = () => {
 
 
     const [select, setSelect] = useState(false)
+    const [hasOpened, setHasOpened] = useState(false)
 
     const handleClick = (e) => {
         setSelectedCategory(e.target.getAttribute("value"))
@@ -18,6 +19,7 @@ export const NavBar = () => {
 
     const handleSelect = () => {
         setSelect(!select)
+        setHasOpened(true)
     }
 
     return (
@@ -28,7 +30,7 @@ export const NavBar = () => {
                     <>
                         <i className={`fa-solid ${select ? 'fa-xmark' : 'fa-bars'} nav__ul--li`} onClick={handleSelect}>
                         {
-                            <ul className={`hamburger-menu ${select ? 'show' : 'hide'}`} value={select}>
+                            <ul className={`hamburger-menu ${!hasOpened ? '' : select ? 'show' : 'hide'}`} value={select}>
                                 <li className={`${selectedCategory === '' ? 'hamburger-menu-selected' : ''}`} value='' onClick={handleClick}>ALL PRODUCTS</li>
                                 {
                                     categories.map(category => {

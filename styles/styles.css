@@ -55,6 +55,7 @@ body {
     top: 60px;
     padding: 0;
     background: #fa4;
+    transform: translateX(-100%);
 }
 
 .show {
