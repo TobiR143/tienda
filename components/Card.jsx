@@ -28,14 +28,14 @@ export const Card = ({ enCarrito, image, title, description, price, handleAgrega
                             type="button"
                             onClick={clickQuitar}
                         >
-                            Quitar del carrito
+                            Remove from cart
                         </button>
                     :   <button
                             className='product-btn'
                             type="button"
                             onClick={clickAgregar}
                         >
-                            Agregar al carrito
+                            Add to cart
                         </button>
                 }
         </div>

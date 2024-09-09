@@ -12,7 +12,7 @@ export const OptionSelector = () => {
 
     return (
         <ul className='options-selector'>
-            <li className={`option ${selectedCategory === '' ? 'selected' : ''}`} value='' onClick={handleClick}>All</li>
+            <li className={`option ${selectedCategory === '' ? 'selected' : ''}`} value='' onClick={handleClick}>ALL PRODUCTS</li>
             {
                 categories.map((category) => {
                     return (

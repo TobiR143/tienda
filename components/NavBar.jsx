@@ -25,11 +25,11 @@ export const NavBar = () => {
             <ul className='nav__ul'>
                 {
                     windowWidth < 600 && 
-                    <><i className='fa-solid fa-bars nav__ul--li' onClick={handleSelect}>
+                    <>
+                        <i className={`fa-solid ${select ? 'fa-xmark' : 'fa-bars'} nav__ul--li`} onClick={handleSelect}>
                         {
-                            select && 
-                            <ul className='hamburger-menu' value={select}>
-                                <li className={`${selectedCategory === '' ? 'hamburger-menu-selected' : ''}`} value='' onClick={handleClick}>All</li>
+                            <ul className={`hamburger-menu ${select ? 'show' : 'hide'}`} value={select}>
+                                <li className={`${selectedCategory === '' ? 'hamburger-menu-selected' : ''}`} value='' onClick={handleClick}>ALL PRODUCTS</li>
                                 {
                                     categories.map(category => {
                                         return(
@@ -39,7 +39,7 @@ export const NavBar = () => {
                                 }
                             </ul>
                         }
-                    </i>
+                        </i>
                     </>
                 }
                 <li className='nav__ul--li'>
