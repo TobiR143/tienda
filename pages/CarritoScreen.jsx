@@ -36,7 +36,7 @@ export const CarritoScreen = () => {
                 listaCompras.length > 0
                 &&  <div className='comprar-zone'>
                         <p className='total-compra'>Total: ${listaCompras.reduce((total,producto) => total + producto.price*producto.cantidad, 0).toFixed(2)}</p>
-                        <button className='comprar-btn' onClick={handleClick}>Comprar</button>
+                        <button className='comprar-btn' onClick={handleClick}>Buy</button>
                     </div>
             }
         </>
